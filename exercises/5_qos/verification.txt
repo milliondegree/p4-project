@@ -1,0 +1,1 @@
+The 2nd test is to send a UDP packet from h1 to h2. We use the driver file “receive.py” and “sende.py” provided by the P4 tutorial. Since a UDP packet has 10 for “tos”, it uses the better path s1-s3-s2. We can investigate the “pcap” files to find detailed information. This picture shows that the UDP packet passes the s3 that locates on the better path.

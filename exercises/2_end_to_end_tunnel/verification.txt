@@ -1,0 +1,8 @@
+We can simply ping h2 from h1 to verify the functionality of the end-to-end tunnel. Then we use Wireshark to investigate the packets. The detailed screenshot and explanation can be found on Github.
+
+The 1st picture shows the original ping request received by port 1 of s1.
+ 
+The 2nd picture shows the status of the ping packet at port 2 of s1. The packet is recognized as a tunnel packet with “0x1212” in the “etherType” field. It means the tunnel header is added during the “ingress processing”.
+If we make a detailed investigation, we can found the sequence of “12 12 08 00”. The “12 12” is the “etherType” in the Ethernet header, and the “08 00” is the “proto_id” of the tunnel header, and it indicates the tunnel header encapsulates an IP packet, the ICMP packet.
+ 
+The 3rd picture shows the packet captured on port 1 of s2. It’s the same as the 1st picture. It means the tunnel header is removed before sending the packet to host h2. And we can check the TTL, it’s still 64 since we do not decrement the TTL value in the tunnel environment, which is different from IPv4 forwarding.

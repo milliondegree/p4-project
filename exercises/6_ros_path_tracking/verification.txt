@@ -1,0 +1,3 @@
+In the 2nd test, we use the driver file on h1 to send a UDP packet to h2.
+
+We can check the packet captured on port 2, s2, we find the packet pass s1, s2, and s3, and the total count of devices is 3. The following table shows the supposed value in each field and the resulting hex sequence of 0x78080003, which also consistent with the data in the “pcap” file.

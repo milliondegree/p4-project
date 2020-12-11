@@ -1,0 +1,1 @@
+From the Wireshark, we see that the first header is the ethernet header in which the “etherType” field is 0x1212 indicating that one “myTunnel” packet is encapsulated in the ethernet packet. Next is the “myTunnel” header. Its “proto_id” field is 0x0800 which indicates that an IP packet is encapsulated.

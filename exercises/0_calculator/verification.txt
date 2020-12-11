@@ -1,0 +1,1 @@
+We run the driver file “calc.py” (provided by the P4 tutorial) on host h1 to send a calculation packet and get the result from the s1. We run 3 operations: 4+5, 3*2, 12|11 and get the correct. We can also use “pcap” file to verify the detail of the packet.

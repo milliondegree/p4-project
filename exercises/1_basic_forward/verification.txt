@@ -1,0 +1,3 @@
+First, we can use the “pingall” command of the Mininet to ensure all hosts are accessible to each other.
+ 
+Then we can review the “pcap” file to check if the packet follows the path it is supposed to be. This picture shows the 2 “ping” packets from h1 to h3. The packets are captured on port 2 of s3, and we can see the TTL equals 62 here, which means these 2 packets pass 2 hops, s1 and s3.

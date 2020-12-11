@@ -1,0 +1,87 @@
+{
+  "target": "bmv2",
+  "p4info": "build/qos_trace.p4.p4info.txt",
+  "bmv2_json": "build/qos_trace.json",
+  "table_entries": [
+    {
+      "table": "MyIngress.ipv4_lpm",
+      "match": {
+        "hdr.ipv4.dstAddr": ["10.0.1.1", 32],
+        "hdr.ipv4.tos": 10
+      },
+      "action_name": "MyIngress.ipv4_forward",
+      "action_params": {
+        "dstAddr": "08:00:00:00:01:01",
+        "port": 2,
+        "tid": 1
+      }
+    },
+    {
+      "table": "MyIngress.ipv4_lpm",
+      "match": {
+        "hdr.ipv4.dstAddr": ["10.0.1.1", 32],
+        "hdr.ipv4.tos": 20
+      },
+      "action_name": "MyIngress.ipv4_forward",
+      "action_params": {
+        "dstAddr": "08:00:00:00:01:01",
+        "port": 2,
+        "tid": 1
+      }
+    },
+    {
+      "table": "MyIngress.ipv4_lpm",
+      "match": {
+        "hdr.ipv4.dstAddr": ["10.0.1.11", 32],
+        "hdr.ipv4.tos": 10
+      },
+      "action_name": "MyIngress.ipv4_forward",
+      "action_params": {
+        "dstAddr": "08:00:00:00:01:11",
+        "port": 1,
+        "tid": 1
+      }
+    },
+    {
+      "table": "MyIngress.ipv4_lpm",
+      "match": {
+        "hdr.ipv4.dstAddr": ["10.0.1.11", 32],
+        "hdr.ipv4.tos": 20
+      },
+      "action_name": "MyIngress.ipv4_forward",
+      "action_params": {
+        "dstAddr": "08:00:00:00:01:11",
+        "port": 1,
+        "tid": 1
+      }
+    },
+
+    {
+      "table": "MyIngress.ipv4_lpm",
+      "match": {
+        "hdr.ipv4.dstAddr": ["10.0.2.0", 24],
+        "hdr.ipv4.tos": 20
+      },
+      "action_name": "MyIngress.ipv4_forward",
+      "action_params": {
+        "dstAddr": "08:00:00:00:02:00",
+        "port": 3,
+        "tid": 1
+      }
+    },
+    
+    {
+      "table": "MyIngress.ipv4_lpm",
+      "match": {
+        "hdr.ipv4.dstAddr": ["10.0.2.0", 24],
+        "hdr.ipv4.tos": 10
+      },
+      "action_name": "MyIngress.ipv4_forward",
+      "action_params": {
+        "dstAddr": "08:00:00:00:03:00",
+        "port": 4,
+        "tid": 1
+      }
+    }
+  ]
+}
